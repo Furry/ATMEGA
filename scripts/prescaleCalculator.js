@@ -2,7 +2,7 @@ const timer0 = [1, 8, 64, 256, 1024];
 const timer1 = [1, 8, 64, 256, 1024];
 const timer2 = [1, 8, 32, 64, 128, 256, 1024];
 
-const desiredFrequency = 64;
+const desiredFrequency = 392;
 
 function calculate(frequencyInHz) {
     const timer0Res = timer0.map(function (prescale) {
