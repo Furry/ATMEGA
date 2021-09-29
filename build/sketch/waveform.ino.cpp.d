@@ -12,4 +12,5 @@ c:\atmega\build\sketch\waveform.ino.cpp.o: \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\variants\standard/pins_arduino.h \
  C:\atmega\includes\suite.h C:/atmega/includes/iom328p.h \
- C:/atmega/includes/bits.h
+ C:/atmega/includes/bits.h C:/atmega/includes/timers.h \
+ C:/atmega/includes/notes.h
