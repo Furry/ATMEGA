@@ -1,6 +1,6 @@
 {
     "port": "COM5",
     "board": "arduino:avr:uno",
-    "sketch": "projects\\waveform\\waveform.ino",
+    "sketch": "projects\\waveformAdvanced\\waveformAdvanced.ino",
     "output": "./build"
 }

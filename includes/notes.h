@@ -1,3 +1,5 @@
+#include <C:/atmega/includes/math.h>
+
 class Notes {
     public:
         static const int NoteC4 = 261;
@@ -37,4 +39,15 @@ class Notes {
         static const int EIGHTH_NOTE = WHOLE_NOTE / 8;
 
         static const int REST = 0;
+};
+
+enum Note {
+    C, CS, D, DS, E, F, FS, G, GS, A, AS, B
+};
+class NoteManager {
+    static const int BaseLine = 32;
+    public:
+        static float getNoteFrequency(Note note, int octave) {
+            return pow(2, (octave - 1) + (note - C) / 12.0) * BaseLine;
+        }
 };

@@ -10,7 +10,7 @@
     "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\variants\\standard"
   },
   {
-    "Sourcefile": "c:\\atmega\\build\\sketch\\waveform.ino.cpp",
+    "Sourcefile": "c:\\atmega\\build\\sketch\\waveformAdvanced.ino.cpp",
     "Include": "",
     "Includepath": null
   }
