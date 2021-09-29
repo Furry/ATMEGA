@@ -1,7 +1,6 @@
 #include <C:\atmega\includes\suite.h>
 
-const long CPUFREQ = 16000000;
-const uint16_t TIMER1_PRESCALER = 8;
+const int PRESCALE = 8;
 
 void delay(int length) {
     int cycledMs = 0;
@@ -62,14 +61,14 @@ int main(void)
             int freq = notes[i];
             int duration = notes[i + 1];
 
-            OCR1A = 16000000 / (freq * TIMER1_PRESCALER * 2);     
+            OCR1A = 16000000 / (freq * PRESCALE * 2);     
             delay(duration);   
         }
 
         _delay_ms(2500);
 
         while (1) {
-            //
+            // Do nothing pls
         }
 
     }
