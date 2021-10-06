@@ -1,5 +1,5 @@
 {
-    "port": "COM5",
+    "port": "COM7",
     "board": "arduino:avr:uno",
     "sketch": "projects\\robot\\robot.ino",
     "output": "./build"
