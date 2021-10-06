@@ -41,9 +41,19 @@ class Notes {
         static const int REST = 0;
 };
 
+template <typename T>
+T pow(T x, T y) {
+    T result = 1;
+    for (int i = 0; i < y; i++) {
+        result *= x;
+    }
+    return result;
+}
+
 enum Note {
     C, CS, D, DS, E, F, FS, G, GS, A, AS, B
 };
+
 class NoteManager {
     static const int BaseLine = 32;
     public:

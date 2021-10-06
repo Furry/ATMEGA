@@ -1,6 +1,8 @@
 {
     "C_Cpp.errorSquiggles": "Enabled",
     "files.associations": {
-        "xstring": "cpp"
-    }
+        "xstring": "cpp",
+        "*.a": "cpp"
+    },
+    "liveServer.settings.port": 5501
 }

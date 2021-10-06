@@ -1,5 +1,5 @@
-c:\atmega\build\sketch\waveformAdvanced.ino.cpp.o: \
- c:\atmega\build\sketch\waveformAdvanced.ino.cpp \
+c:\atmega\build\sketch\robot.ino.cpp.o: \
+ c:\atmega\build\sketch\robot.ino.cpp \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/binary.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/WCharacter.h \
@@ -12,5 +12,4 @@ c:\atmega\build\sketch\waveformAdvanced.ino.cpp.o: \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\variants\standard/pins_arduino.h \
  C:\atmega\includes\suite.h C:/atmega/includes/iom328p.h \
- C:/atmega/includes/bits.h C:/atmega/includes/timers.h \
- C:/atmega/includes/notes.h C:/atmega/includes/math.h
+ C:/atmega/includes/bits.h C:/atmega/includes/timers.h

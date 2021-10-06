@@ -1,6 +1,6 @@
 {
     "port": "COM5",
     "board": "arduino:avr:uno",
-    "sketch": "projects\\waveformAdvanced\\waveformAdvanced.ino",
+    "sketch": "projects\\robot\\robot.ino",
     "output": "./build"
 }
