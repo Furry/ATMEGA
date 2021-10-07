@@ -11,19 +11,24 @@ void start() {
     // PORTD |= ~(1 << PIND3);
     // PORTD &= ~(1 << PIND3);
 }
+void turnRight() {
+    OCR2A = 255;
+    OCR0A = 0;
+    _delay_ms(900);
+}
 
 void turnLeft() {
     // start();
     OCR2A = 0;
     OCR0A = 255;
-    _delay_ms(1000);
+    _delay_ms(900);
     // stop();
 }
 
 void forward() {
     start();
-    OCR0A = 255/2;
-    OCR2A = 255/2;
+    OCR0A = 150;
+    OCR2A = 150;
     _delay_ms(1000);
     stop();
 }
@@ -45,7 +50,7 @@ int main() {
     // Standby is Pin 3;
 
     // Enable TCCR0A and TCCR0B for PWM on Pin 6.
-    TCCR0A |= (1 << COM0A1) | (1 << WGM00) | (1 << WGM01) << (1 << WGM02);
+    TCCR0A |= (1 << COM0A1) | (1 << WGM00) | (1 << WGM01) | (1 << WGM02);
     TCCR0B |= (1 << CS00);
 
     TCCR2A |= (1 << COM2A1) | (1 << WGM20) | (1 << WGM21);
@@ -69,15 +74,26 @@ int main() {
 
 
 
-    // circleLeft();
-    forward();
+    // Square
+    // forward();
+    // turnLeft();
+    // forward();
+    // turnLeft();
+    // forward();
+    // turnLeft();
+    // forward();
+    // turnLeft();
+
+    // Figure8
+    turnLeft();
+    turnLeft();
     turnLeft();
     forward();
-    turnLeft();
     forward();
-    turnLeft();
-    forward();
-    turnLeft();
+    turnRight();
+    turnRight();
+    turnRight();
+
     PORTD = 0x00;
     while (1) {}
 }

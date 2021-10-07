@@ -12,35 +12,48 @@ void start() {
     // PORTD |= ~(1 << PIND3);
     // PORTD &= ~(1 << PIND3);
 }
+void turnRight() {
+    
+# 15 "c:\\atmega\\projects\\robot\\robot.ino" 3
+   (*(volatile uint8_t *)(0xB3)) 
+# 15 "c:\\atmega\\projects\\robot\\robot.ino"
+         = 255;
+    
+# 16 "c:\\atmega\\projects\\robot\\robot.ino" 3
+   (*(volatile uint8_t *)((0x27) + 0x20)) 
+# 16 "c:\\atmega\\projects\\robot\\robot.ino"
+         = 0;
+    _delay_ms(900);
+}
 
 void turnLeft() {
     // start();
     
-# 17 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 22 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)(0xB3)) 
-# 17 "c:\\atmega\\projects\\robot\\robot.ino"
+# 22 "c:\\atmega\\projects\\robot\\robot.ino"
          = 0;
     
-# 18 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 23 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x27) + 0x20)) 
-# 18 "c:\\atmega\\projects\\robot\\robot.ino"
+# 23 "c:\\atmega\\projects\\robot\\robot.ino"
          = 255;
-    _delay_ms(1000);
+    _delay_ms(900);
     // stop();
 }
 
 void forward() {
     start();
     
-# 25 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 30 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x27) + 0x20)) 
-# 25 "c:\\atmega\\projects\\robot\\robot.ino"
-         = 255/2;
+# 30 "c:\\atmega\\projects\\robot\\robot.ino"
+         = 150;
     
-# 26 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 31 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)(0xB3)) 
-# 26 "c:\\atmega\\projects\\robot\\robot.ino"
-         = 255/2;
+# 31 "c:\\atmega\\projects\\robot\\robot.ino"
+         = 150;
     _delay_ms(1000);
     stop();
 }
@@ -48,35 +61,35 @@ void forward() {
 int main() {
     // Enable OUTPUT on Pins 7, 6, 5, 4, 3, 2, 1, 0 (0x11111111) 
     
-# 33 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 38 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x0A) + 0x20)) 
-# 33 "c:\\atmega\\projects\\robot\\robot.ino"
+# 38 "c:\\atmega\\projects\\robot\\robot.ino"
         |= 0xFF;
     
-# 34 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 39 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x05) + 0x20)) 
-# 34 "c:\\atmega\\projects\\robot\\robot.ino"
+# 39 "c:\\atmega\\projects\\robot\\robot.ino"
          |= 0xFF;
 
     // Set Standby pin 3 to 1;
     
-# 37 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 42 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x0B) + 0x20)) 
-# 37 "c:\\atmega\\projects\\robot\\robot.ino"
+# 42 "c:\\atmega\\projects\\robot\\robot.ino"
          = 0x00 | (1 << 
-# 37 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 42 "c:\\atmega\\projects\\robot\\robot.ino" 3
                         3
-# 37 "c:\\atmega\\projects\\robot\\robot.ino"
+# 42 "c:\\atmega\\projects\\robot\\robot.ino"
                              );
 
     
-# 39 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 44 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x0B) + 0x20)) 
-# 39 "c:\\atmega\\projects\\robot\\robot.ino"
+# 44 "c:\\atmega\\projects\\robot\\robot.ino"
          |= (1 << 
-# 39 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 44 "c:\\atmega\\projects\\robot\\robot.ino" 3
                   2
-# 39 "c:\\atmega\\projects\\robot\\robot.ino"
+# 44 "c:\\atmega\\projects\\robot\\robot.ino"
                        );
 
     // SREG = 0x80;
@@ -87,69 +100,69 @@ int main() {
 
     // Enable TCCR0A and TCCR0B for PWM on Pin 6.
     
-# 48 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 53 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x24) + 0x20)) 
-# 48 "c:\\atmega\\projects\\robot\\robot.ino"
+# 53 "c:\\atmega\\projects\\robot\\robot.ino"
           |= (1 << 
-# 48 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 53 "c:\\atmega\\projects\\robot\\robot.ino" 3
                    7
-# 48 "c:\\atmega\\projects\\robot\\robot.ino"
+# 53 "c:\\atmega\\projects\\robot\\robot.ino"
                          ) | (1 << 
-# 48 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 53 "c:\\atmega\\projects\\robot\\robot.ino" 3
                                    0
-# 48 "c:\\atmega\\projects\\robot\\robot.ino"
+# 53 "c:\\atmega\\projects\\robot\\robot.ino"
                                         ) | (1 << 
-# 48 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 53 "c:\\atmega\\projects\\robot\\robot.ino" 3
                                                   1
-# 48 "c:\\atmega\\projects\\robot\\robot.ino"
-                                                       ) << (1 << 
-# 48 "c:\\atmega\\projects\\robot\\robot.ino" 3
-                                                                  3
-# 48 "c:\\atmega\\projects\\robot\\robot.ino"
-                                                                       );
+# 53 "c:\\atmega\\projects\\robot\\robot.ino"
+                                                       ) | (1 << 
+# 53 "c:\\atmega\\projects\\robot\\robot.ino" 3
+                                                                 3
+# 53 "c:\\atmega\\projects\\robot\\robot.ino"
+                                                                      );
     
-# 49 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 54 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x25) + 0x20)) 
-# 49 "c:\\atmega\\projects\\robot\\robot.ino"
+# 54 "c:\\atmega\\projects\\robot\\robot.ino"
           |= (1 << 
-# 49 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 54 "c:\\atmega\\projects\\robot\\robot.ino" 3
                    0
-# 49 "c:\\atmega\\projects\\robot\\robot.ino"
+# 54 "c:\\atmega\\projects\\robot\\robot.ino"
                        );
 
     
-# 51 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 56 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)(0xB0)) 
-# 51 "c:\\atmega\\projects\\robot\\robot.ino"
+# 56 "c:\\atmega\\projects\\robot\\robot.ino"
           |= (1 << 
-# 51 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 56 "c:\\atmega\\projects\\robot\\robot.ino" 3
                    7
-# 51 "c:\\atmega\\projects\\robot\\robot.ino"
+# 56 "c:\\atmega\\projects\\robot\\robot.ino"
                          ) | (1 << 
-# 51 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 56 "c:\\atmega\\projects\\robot\\robot.ino" 3
                                    0
-# 51 "c:\\atmega\\projects\\robot\\robot.ino"
+# 56 "c:\\atmega\\projects\\robot\\robot.ino"
                                         ) | (1 << 
-# 51 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 56 "c:\\atmega\\projects\\robot\\robot.ino" 3
                                                   1
-# 51 "c:\\atmega\\projects\\robot\\robot.ino"
+# 56 "c:\\atmega\\projects\\robot\\robot.ino"
                                                        );
     
-# 52 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 57 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)(0xB1)) 
-# 52 "c:\\atmega\\projects\\robot\\robot.ino"
+# 57 "c:\\atmega\\projects\\robot\\robot.ino"
           |= (1 << 
-# 52 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 57 "c:\\atmega\\projects\\robot\\robot.ino" 3
                    0
-# 52 "c:\\atmega\\projects\\robot\\robot.ino"
+# 57 "c:\\atmega\\projects\\robot\\robot.ino"
                        );
 
     // moveCycle();
 
     
-# 56 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 61 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x0B) + 0x20)) 
-# 56 "c:\\atmega\\projects\\robot\\robot.ino"
+# 61 "c:\\atmega\\projects\\robot\\robot.ino"
          |= 0x10;
 
     // Temporary Breathing Example for a LED on Pin 6
@@ -166,19 +179,30 @@ int main() {
 
 
 
-    // circleLeft();
-    forward();
+    // Square
+    // forward();
+    // turnLeft();
+    // forward();
+    // turnLeft();
+    // forward();
+    // turnLeft();
+    // forward();
+    // turnLeft();
+
+    // Figure8
+    turnLeft();
+    turnLeft();
     turnLeft();
     forward();
-    turnLeft();
     forward();
-    turnLeft();
-    forward();
-    turnLeft();
+    turnRight();
+    turnRight();
+    turnRight();
+
     
-# 81 "c:\\atmega\\projects\\robot\\robot.ino" 3
+# 97 "c:\\atmega\\projects\\robot\\robot.ino" 3
    (*(volatile uint8_t *)((0x0B) + 0x20)) 
-# 81 "c:\\atmega\\projects\\robot\\robot.ino"
+# 97 "c:\\atmega\\projects\\robot\\robot.ino"
          = 0x00;
     while (1) {}
 }
