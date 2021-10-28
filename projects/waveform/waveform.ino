@@ -13,11 +13,11 @@ void delay(int length) {
 int main(void)
 {
 
-   DDRB |= 0x03; // Set pin B0 as output
+    DDRB |= 0x03; // Set pin B0 as output
 
 
-   TCCR1A |= 0x40; // CTC on, with a prescaler of 8.
-   TCCR1B |= 0x09;
+    TCCR1A |= 0x40; // CTC on, with a prescaler of 8.
+    TCCR1B |= 0x09;
 
     while (1)
     {
